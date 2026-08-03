@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rubbishes.net — does this website exist?</title>
+<meta name="description" content="Rubbishes. Website under construction. We did the math.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf8f3;
+    --line:#2e2a26;
+    --soft:#f5ecdd;
+    --accent:#e8804d;
+    --green:#2f9e6f;
+    --neutral:#b9b2a6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:var(--bg);
+    color:var(--line);
+    font-family:'Gloria Hallelujah',cursive;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:2rem 1rem;
+    line-height:1.6;
+  }
+  .napkin{
+    max-width:560px;
+    width:100%;
+    background:var(--soft);
+    border-radius:14px 18px 12px 16px; /* deliberately uneven */
+    padding:2.5rem 2rem 2rem;
+    position:relative;
+    box-shadow:4px 5px 0 rgba(46,42,38,.12);
+  }
+  /* hand-drawn border: an SVG rectangle that misses its corners */
+  .napkin svg.border{
+    position:absolute;inset:-6px;width:calc(100% + 12px);height:calc(100% + 12px);
+    pointer-events:none;
+  }
+  h1{
+    font-size:clamp(1.6rem,5vw,2.2rem);
+    line-height:1.3;
+    margin-bottom:.25rem;
+  }
+  .sub{
+    color:var(--neutral);
+    font-size:.95rem;
+    margin-bottom:1.5rem;
+  }
+  .math{
+    font-size:clamp(1.05rem,3.5vw,1.25rem);
+    margin:0 0 .35rem;
+  }
+  .math .num{color:var(--accent)}
+  .math .money{color:var(--green)}
+  .rule{
+    border:none;
+    height:14px;
+    margin:.6rem 0 1rem;
+    background:no-repeat center/100% 100% url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 14' preserveAspectRatio='none'><path d='M4 8 C 60 5, 120 11, 200 7 S 340 10, 396 6' stroke='%232e2a26' stroke-width='2.5' fill='none' stroke-linecap='round'/></svg>");
+  }
+  .verdict-row{
+    display:flex;
+    align-items:center;
+    gap:1.25rem;
+    flex-wrap:wrap;
+    margin:1.5rem 0 1rem;
+  }
+  .stamp{
+    font-size:clamp(1.5rem,6vw,2.1rem);
+    color:var(--accent);
+    border:3px solid var(--accent);
+    border-radius:10px 14px 8px 12px;
+    padding:.2rem 1rem .1rem;
+    transform:rotate(-6deg);
+    display:inline-block;
+    animation:slam .45s cubic-bezier(.2,1.6,.4,1) .6s both;
+    text-shadow:1px 1px 0 var(--bg);
+    background:var(--bg);
+  }
+  @keyframes slam{
+    from{transform:rotate(-14deg) scale(2.4);opacity:0}
+    to{transform:rotate(-6deg) scale(1);opacity:1}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .stamp{animation:none}
+  }
+  .figure{flex:0 0 auto}
+  .footer{
+    margin-top:1.25rem;
+    font-size:.9rem;
+    color:var(--neutral);
+  }
+  .footer a{
+    color:var(--green);
+    text-decoration:none;
+    border-bottom:2px solid var(--green);
+  }
+  .footer a:focus-visible{
+    outline:3px dashed var(--accent);
+    outline-offset:3px;
+  }
+  .errno{
+    position:absolute;
+    top:-1.1rem;
+    right:1.2rem;
+    background:var(--bg);
+    border:2.5px solid var(--line);
+    border-radius:50% 45% 55% 48%;
+    padding:.35rem .8rem;
+    transform:rotate(4deg);
+    font-size:.85rem;
+  }
+</style>
+</head>
+<body>
+  <main class="napkin">
+    <svg class="border" viewBox="0 0 580 460" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M14 12 C 150 6, 420 16, 566 10 C 572 130, 564 320, 570 446
+               C 430 452, 160 442, 12 450 C 6 330, 16 140, 14 12 Z"
+            fill="none" stroke="var(--line)" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+
+    <span class="errno">err 404-ish</span>
+
+    <h1>rubbishes.net</h1>
+    <p class="sub">napkin math: does this website exist?</p>
+
+    <p class="math"><span class="num">1</span> domain purchased</p>
+    <p class="math"><span class="num">0</span> websites built</p>
+    <p class="math"><span class="money">$</span> several actual dollars spent anyway</p>
+    <hr class="rule">
+    <p class="math">= you are standing inside a placeholder</p>
+
+    <div class="verdict-row">
+      <svg class="figure" width="84" height="104" viewBox="0 0 84 104" aria-label="stick figure shrugging next to a sign that says soon">
+        <!-- head -->
+        <circle cx="34" cy="16" r="11" fill="none" stroke="var(--line)" stroke-width="2.6"/>
+        <!-- body -->
+        <path d="M34 27 C 33.5 45, 34.5 55, 34 62" fill="none" stroke="var(--line)" stroke-width="2.6" stroke-linecap="round"/>
+        <!-- shrug arms -->
+        <path d="M34 36 C 25 32, 18 30, 12 33" fill="none" stroke="var(--line)" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M34 36 C 43 32, 50 31, 55 28" fill="none" stroke="var(--line)" stroke-width="2.6" stroke-linecap="round"/>
+        <!-- legs -->
+        <path d="M34 62 C 29 75, 27 86, 25 96" fill="none" stroke="var(--line)" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M34 62 C 39 75, 42 86, 45 96" fill="none" stroke="var(--line)" stroke-width="2.6" stroke-linecap="round"/>
+        <!-- little sign -->
+        <path d="M62 44 L62 96" stroke="var(--line)" stroke-width="2.6" stroke-linecap="round"/>
+        <rect x="50" y="28" width="30" height="20" rx="4" fill="var(--bg)" stroke="var(--line)" stroke-width="2.4" transform="rotate(-3 65 38)"/>
+        <text x="56" y="43" font-family="'Gloria Hallelujah',cursive" font-size="10" fill="var(--accent)" transform="rotate(-3 65 38)">soon</text>
+      </svg>
+      <span class="stamp">NOT YET</span>
+    </div>
+
+    <p>A real website is under construction. By which we mean: it has been written on a napkin, which is legally binding.</p>
+
+    <p class="footer">
+      In the meantime, the videos live on
+      <a href="https://www.youtube.com/@rubbishes">YouTube</a>.
+      Worth it? That's the whole question.
+    </p>
+  </main>
+</body>
+</html>
