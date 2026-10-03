@@ -255,6 +255,7 @@ a.win:hover .win-bar, a.win:focus-visible .win-bar { border-color: var(--accent)
   .hero h1 { white-space: normal; font-size: clamp(3rem, 17vw, 5.5rem); }
   .triad { gap: 32px; }
   .tiles-ventures, .tiles-code { grid-template-columns: 1fr; }
+  .win-venture { width: min(100%, 240px); }
   .tiles-code .win-body { min-height: 0; }
 }
 
