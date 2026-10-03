@@ -177,7 +177,9 @@ body::after {
 }
 
 /* ---------- sections ---------- */
-.ws { padding: clamp(72px, 12vw, 160px) var(--gutter) 0; max-width: 1400px; margin: 0 auto; }
+.ws { --pad: clamp(72px, 12vw, 160px); padding: var(--pad) var(--gutter) 0; max-width: 1400px; margin: 0 auto; }
+/* jumps (1/2/3, links) land on the content, not on the empty padding above it */
+.ws:not(.contact) { scroll-margin-top: calc(-1 * var(--pad)); }
 
 /* ---------- windows (Hyprland tiles) ---------- */
 .tiles { display: grid; gap: var(--gap); }
@@ -201,7 +203,7 @@ a.win:hover .win-bar, a.win:focus-visible .win-bar { border-color: var(--accent)
 .win-p { color: var(--dim); font-style: italic; }
 
 /* the two companies: logos only */
-.tiles-ventures { grid-template-columns: 1fr 1fr; }
+.tiles-ventures { grid-template-columns: 1fr 1fr; align-items: center; min-height: clamp(416px, calc(58vh + 36px), 636px); }
 /* compact windows, each centered in its half, so the logos stay where they were */
 .win-venture { justify-self: center; width: min(100%, clamp(280px, 27vw, 380px)); }
 .win-venture .win-body { aspect-ratio: 1; align-items: center; justify-content: center; }
@@ -255,6 +257,7 @@ a.win:hover .win-bar, a.win:focus-visible .win-bar { border-color: var(--accent)
   .hero h1 { white-space: normal; font-size: clamp(3rem, 17vw, 5.5rem); }
   .triad { gap: 32px; }
   .tiles-ventures, .tiles-code { grid-template-columns: 1fr; }
+  .tiles-ventures { min-height: 0; }
   .win-venture { width: min(100%, 240px); }
   .tiles-code .win-body { min-height: 0; }
 }

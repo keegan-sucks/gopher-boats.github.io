@@ -28,7 +28,9 @@
   var sections = ["now", "code", "contact"].map(function (id) { return document.getElementById(id); }).filter(Boolean);
   function markActive() {
     var y = window.innerHeight * 0.45, active = null;
-    sections.forEach(function (s) { if (s.getBoundingClientRect().top <= y) active = s.id; });
+    sections.forEach(function (s) { var c = s.firstElementChild || s; if (c.getBoundingClientRect().top <= y) active = s.id; });
+    // at the very bottom the last section can never reach the line, so it wins there
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) active = sections[sections.length - 1].id;
     Object.keys(links).forEach(function (k) { links[k].classList.toggle("active", k === active); });
   }
   window.addEventListener("scroll", markActive, { passive: true });
