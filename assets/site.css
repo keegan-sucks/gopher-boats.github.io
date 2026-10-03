@@ -216,7 +216,12 @@ a.win:hover .win-bar, a.win:focus-visible .win-bar { border-color: var(--accent)
 }
 .logo-firebird { --logo: url("partners/firebird.webp"); }
 .logo-lmg { --logo: url("partners/lmg.svg"); width: clamp(110px, 12.5vw, 180px); }
-.win-venture:hover .logo, .win-venture:focus-visible .logo { background: var(--accent); scale: 1.04; opacity: 1; }
+.win-venture:hover .logo, .win-venture:focus-visible .logo, .win-venture.focused .logo { background: var(--accent); scale: 1.04; opacity: 1; }
+/* Fire / Fandom focus one window, Hyprland-style: bronze border on it, the other dims */
+.win-venture { transition: border-color .25s var(--ease), background-color .25s var(--ease), opacity .5s var(--ease); }
+.win-venture.focused { border-color: var(--accent); background: var(--panel-2); }
+.win-venture.focused .win-bar { border-color: var(--accent); color: var(--accent); }
+.win-venture.dimmed, .js .win-venture.reveal.dimmed { opacity: .35; }
 
 /* code */
 .slop {
