@@ -1,86 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>keegan.sucks</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#282828;        /* gruvbox dark bg */
-    --fg:#ebdbb2;        /* gruvbox cream    */
-    --dim:#a89984;       /* gruvbox gray     */
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
-  body{
-    background:var(--bg);
-    color:var(--fg);
-    font-family:"Special Elite","Courier New",ui-monospace,monospace;
-    min-height:100dvh;
-    display:flex;
-    align-items:center;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{
-    padding-inline:clamp(1.75rem,12vw,11rem);
-    max-width:46rem;
-  }
-  .icon{
-    width:clamp(84px,11vw,128px);
-    height:auto;
-    display:block;
-    margin-bottom:clamp(2rem,4vw,3rem);
-  }
-  h1{
-    font-weight:400;
-    font-size:clamp(1.9rem,5.2vw,3.6rem);
-    line-height:1.12;
-    letter-spacing:-0.005em;
-  }
-  .code{
-    margin-top:clamp(1.1rem,2.2vw,1.6rem);
-    font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-    font-size:clamp(.8rem,1.3vw,1rem);
-    letter-spacing:.18em;
-    color:var(--dim);
-    text-transform:uppercase;
-    text-decoration:none;
-    display:inline-block;
-    transition:color .15s ease;
-  }
-  .code:hover,
-  .code:focus-visible{color:var(--fg)}
-  .code:focus-visible{outline:2px solid var(--fg);outline-offset:6px}
-  /* subtle entrance */
-  .reveal{opacity:0;transform:translateY(10px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
-  .reveal:nth-child(2){animation-delay:.08s}
-  .reveal:nth-child(3){animation-delay:.16s}
-  @keyframes rise{to{opacity:1;transform:none}}
-  @media (prefers-reduced-motion:reduce){
-    .reveal{opacity:1;transform:none;animation:none}
-  }
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keegan Burke</title>
+<meta name="description" content="Keegan Burke — operations at Firebird Fine Art Foundry, co-founder of Larch Mountain Guild, and a builder of software for the shop floor.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7eecf">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121212">
+<link rel="canonical" href="https://keegan.sucks/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://keegan.sucks/">
+<meta property="og:title" content="Keegan Burke">
+<meta property="og:description" content="Operations at Firebird Fine Art Foundry. Co-founder, Larch Mountain Guild. Software for the shop floor.">
+<meta property="og:image" content="https://keegan.sucks/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/fonts/Libron-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+  // Set the theme before first paint: a saved choice wins, otherwise follow the system.
+  try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+  document.documentElement.classList.add("js");
+</script>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-  <main class="wrap">
-    <svg class="icon reveal" viewBox="0 0 120 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-         fill="none" stroke="var(--fg)" stroke-width="11" stroke-linejoin="miter" stroke-linecap="square">
-      <!-- document body with folded top-right corner -->
-      <path d="M16 10 H84 L104 30 V140 H16 Z"/>
-      <!-- the fold -->
-      <path d="M84 10 V30 H104"/>
-      <!-- eyes -->
-      <rect x="40" y="52" width="13" height="13" fill="var(--fg)" stroke="none"/>
-      <rect x="66" y="52" width="13" height="13" fill="var(--fg)" stroke="none"/>
-      <!-- frown -->
-      <polyline points="40,104 40,94 80,94 80,104"/>
-    </svg>
 
-    <h1 class="reveal">This page is not available</h1>
-    <a class="code reveal" href="mailto:keegan@burke.rip">ERR_DEVELOPER_TOO_LAZY</a>
-  </main>
+<a class="skip" href="#now">Skip to content</a>
+
+<header class="bar" role="banner">
+  <nav class="workspaces" aria-label="Sections">
+    <a href="#now" data-ws="now"><span class="ws-n">1</span><span class="ws-l">Now</span></a>
+    <a href="#code" data-ws="code"><span class="ws-n">2</span><span class="ws-l">Code</span></a>
+    <a href="#contact" data-ws="contact"><span class="ws-n">3</span><span class="ws-l">Contact</span></a>
+  </nav>
+  <a class="bar-mark" href="#top" aria-label="Back to top"><span class="mark" aria-hidden="true"></span></a>
+  <div class="bar-right">
+    <span class="clock" aria-label="Local time in the Pacific Northwest"><span class="clock-zone">PNW</span> <time id="clock">--:--</time></span>
+    <button class="theme-toggle" type="button" aria-label="Switch between light and dark" title="Light / dark (T)">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.75a6.25 6.25 0 0 1 0 12.5Z" fill="currentColor"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="top" aria-label="Introduction">
+    <div class="hero-inner">
+      <p class="margin margin-l reveal">Chief Operating Officer</p>
+      <h1 class="reveal">Keegan Burke<span class="cursor" aria-hidden="true"></span></h1>
+      <p class="margin margin-r reveal">Pacific Northwest</p>
+
+      <p class="lede reveal">I run operations at a fine art foundry and co-founded a guild that casts fandom in bronze. The work is production, people, and the systems — more and more of them software — that keep the metal pouring.</p>
+
+      <ul class="triad reveal" aria-label="What I do">
+        <li><a href="#firebird">Foundry</a></li>
+        <li><a href="#guild">Guild</a></li>
+        <li><a href="#code">Code</a></li>
+      </ul>
+    </div>
+    <div class="floor" aria-hidden="true"></div>
+  </section>
+
+  <section class="ws" id="now" aria-labelledby="now-h">
+    <header class="ws-head reveal">
+      <span class="ws-tag">01</span>
+      <h2 id="now-h">Now</h2>
+      <p>Two companies, one shop floor.</p>
+    </header>
+
+    <div class="tiles tiles-ventures">
+      <a class="win win-venture reveal" id="firebird" href="https://firebirdbronze.com">
+        <span class="win-bar"><span class="win-title">firebirdbronze.com</span><span class="win-meta">Est. 2012</span></span>
+        <span class="win-body">
+          <span class="logo logo-firebird" role="img" aria-label="Firebird Fine Art Foundry logo"></span>
+          <span class="kicker">Chief Operating Officer · since 2025</span>
+          <span class="win-h">Firebird Fine Art Foundry</span>
+          <span class="win-p">A full-service fine art foundry: physical and digital sculpture, cast in bronze for artists, studios and brands. I run the operation — production, engineering, people, and the systems that tie them together.</span>
+          <span class="cta">Visit the foundry <span class="arrow" aria-hidden="true">→</span></span>
+        </span>
+      </a>
+
+      <a class="win win-venture reveal" id="guild" href="https://larchmountainguild.com">
+        <span class="win-bar"><span class="win-title">larchmountainguild.com</span><span class="win-meta">Co-founder</span></span>
+        <span class="win-body">
+          <span class="logo logo-lmg" role="img" aria-label="Larch Mountain Guild logo"></span>
+          <span class="kicker">Co-founder</span>
+          <span class="win-h">Larch Mountain Guild</span>
+          <span class="win-p">Custom bronze sculpture for fandoms — collector pieces and commissions for games, creators and studios, cast in partnership with Firebird. Fandom burns forever.</span>
+          <span class="cta">Visit the guild <span class="arrow" aria-hidden="true">→</span></span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section class="ws" id="code" aria-labelledby="code-h">
+    <header class="ws-head reveal">
+      <span class="ws-tag">02</span>
+      <h2 id="code-h">Code</h2>
+      <p>Tools for the shop floor, and for my own desk.</p>
+    </header>
+
+    <div class="win win-term reveal">
+      <span class="win-bar"><span class="win-title">In service at the foundry</span><span class="win-meta">Private</span></span>
+      <dl class="term">
+        <div><dt>Production scheduler</dt><dd>Builds the foundry’s daily schedule and runs itself on a server every morning.</dd></div>
+        <div><dt>Shop floor app</dt><dd>Job timing on the floor iPads, so costing comes from real hours.</dd></div>
+        <div><dt>Project tracker</dt><dd>Every project, its steps and its blockers, published from plain notes.</dd></div>
+      </dl>
+    </div>
+
+    <p class="sub reveal">Open source · built for <a href="https://omarchy.org">Omarchy</a></p>
+    <div class="tiles tiles-code">
+      <a class="win win-repo reveal" href="https://github.com/keegan-sucks/omarchy-flowstate">
+        <span class="win-bar"><span class="win-title">~/omarchy-flowstate</span><span class="win-meta">QML</span></span>
+        <span class="win-body">
+          <span class="win-h">Flowstate</span>
+          <span class="win-p">A focus timer for the Omarchy bar. Blocks distracting sites, plays a shuffled soundtrack, and opens your notes.</span>
+        </span>
+      </a>
+      <a class="win win-repo reveal" href="https://github.com/keegan-sucks/omarchy-lookup">
+        <span class="win-bar"><span class="win-title">~/omarchy-lookup</span><span class="win-meta">QML</span></span>
+        <span class="win-body">
+          <span class="win-h">Look Up</span>
+          <span class="win-p">Select a word, press a key, read the definition. Ships Webster’s 1913 offline.</span>
+        </span>
+      </a>
+      <a class="win win-repo reveal" href="https://github.com/keegan-sucks/rss-feeder">
+        <span class="win-bar"><span class="win-title">~/rss-feeder</span><span class="win-meta">QML</span></span>
+        <span class="win-body">
+          <span class="win-h">RSS-Feeder</span>
+          <span class="win-p">A native feed reader in the bar, with the short-form noise filtered out.</span>
+        </span>
+      </a>
+      <a class="win win-repo reveal" href="https://github.com/keegan-sucks/omarchy-wallpaper-roulette">
+        <span class="win-bar"><span class="win-title">~/wallpaper-roulette</span><span class="win-meta">Shell</span></span>
+        <span class="win-body">
+          <span class="win-h">Wallpaper Roulette</span>
+          <span class="win-p">Rotates the wallpaper on a timer and re-themes the desktop to match.</span>
+        </span>
+      </a>
+      <a class="win win-repo reveal" href="https://github.com/keegan-sucks/flowstate-macos">
+        <span class="win-bar"><span class="win-title">~/flowstate-macos</span><span class="win-meta">Swift</span></span>
+        <span class="win-body">
+          <span class="win-h">Flowstate for macOS</span>
+          <span class="win-p">The same focus timer, ported to the menu bar.</span>
+        </span>
+      </a>
+      <a class="win win-repo reveal" href="https://github.com/keegan-sucks/omarchy-setup">
+        <span class="win-bar"><span class="win-title">~/omarchy-setup</span><span class="win-meta">Shell</span></span>
+        <span class="win-body">
+          <span class="win-h">Omarchy Setup</span>
+          <span class="win-p">My whole desktop, reproducible in one command.</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section class="ws contact" id="contact" aria-labelledby="contact-h">
+    <span class="mark mark-lg reveal" aria-hidden="true"></span>
+    <h2 id="contact-h" class="reveal">Correspondence</h2>
+    <a class="mail reveal" href="mailto:hello@keegan.sucks">hello@keegan.sucks</a>
+    <p class="links reveal"><a href="https://github.com/keegan-sucks">GitHub</a></p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <span>Set in Libron</span>
+  <span>keegan.sucks · MMXXVI</span>
+  <span class="keys">Press <kbd>1</kbd>–<kbd>3</kbd> · <kbd>T</kbd></span>
+</footer>
+
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

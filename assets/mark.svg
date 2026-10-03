@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- keegan.sucks mark: a terminal block cursor, notched into a K and cut by scanlines -->
+  <defs>
+    <mask id="scan">
+      <rect width="32" height="32" fill="#fff"/>
+      <rect y="15.25" width="32" height="1.5"/>
+      <rect y="21.2" width="32" height="1.3"/>
+      <rect y="24.6" width="32" height="1.3"/>
+    </mask>
+  </defs>
+  <path d="M7 5H25L15.5 16L25 27H7Z" fill="#e68e0d" mask="url(#scan)"/>
+</svg>

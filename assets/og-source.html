@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- Source for /og.png (1200x630). Re-render with a headless browser at that size. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>og source</title>
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body::after { opacity: .35; animation: none; }
+  .og { position: relative; height: 630px; display: grid; place-items: center; text-align: center; overflow: hidden; isolation: isolate; }
+  .og h1 { font-weight: 400; color: var(--hi); font-size: 124px; line-height: 1; }
+  .og h1 .cursor { animation: none; }
+  .og p { margin-top: 26px; color: var(--accent); font-variant-caps: all-small-caps; letter-spacing: .18em; font-size: 26px; }
+  .og .url { position: absolute; left: 48px; bottom: 36px; color: var(--dim); font-variant-caps: all-small-caps; letter-spacing: .18em; font-size: 22px; }
+  .og .floor { height: 40%; animation: none; }
+  .og .frame { position: absolute; inset: 22px; border: 1px solid var(--line); pointer-events: none; }
+</style>
+</head>
+<body data-theme="dark">
+  <div class="og">
+    <div>
+      <h1>Keegan Burke<span class="cursor"></span></h1>
+      <p>Firebird Fine Art Foundry · Larch Mountain Guild · Code</p>
+    </div>
+    <span class="url">keegan.sucks</span>
+    <div class="floor"></div>
+    <div class="frame"></div>
+  </div>
+  <script>document.documentElement.dataset.theme = "dark";</script>
+</body>
+</html>
