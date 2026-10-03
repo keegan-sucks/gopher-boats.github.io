@@ -47,6 +47,31 @@
     items.forEach(function (el) { el.classList.add("in"); });
   }
 
+  // --- Fire / Fandom: jump to the logos and focus that one window ---
+  var ventures = document.querySelectorAll(".win-venture");
+  var nowSec = document.getElementById("now");
+  function clearFocus() { ventures.forEach(function (v) { v.classList.remove("focused", "dimmed"); }); }
+  function focusVenture(id) {
+    ventures.forEach(function (v) { v.classList.toggle("focused", v.id === id); v.classList.toggle("dimmed", v.id !== id); });
+  }
+  document.querySelectorAll("[data-focus]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      nowSec.scrollIntoView();
+      focusVenture(a.dataset.focus);
+      history.replaceState(null, "", "#" + a.dataset.focus);
+    });
+  });
+  ventures.forEach(function (v) { v.addEventListener("mouseenter", clearFocus); });
+  if (location.hash === "#firebird" || location.hash === "#guild") {
+    nowSec.scrollIntoView();
+    focusVenture(location.hash.slice(1));
+  }
+  window.addEventListener("scroll", function () {
+    var r = nowSec.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > window.innerHeight) clearFocus();
+  }, { passive: true });
+
   // --- keys: 1–3 jump between workspaces, T flips the theme (like Super+1..3 in Omarchy) ---
   var order = ["now", "code", "contact"];
   document.addEventListener("keydown", function (e) {
