@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- favicon cut of the mark: one scanline, so it stays crisp at 16px -->
+  <style>
+    path { fill: #8c4a06; }
+    @media (prefers-color-scheme: dark) { path { fill: #e68e0d; } }
+  </style>
+  <path d="M5 3H27L15.4 15.2H5ZM5 16.8H15.4L27 29H5Z"/>
+</svg>
